@@ -1,1 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+/* Master css*/
+
+@media screen and (max-width:1024px){
+    .logo{
+        height: 125px;
+    }
+}
+
+@media screen and (max-width:950px){
+    .logo{
+        height: 125px;
+    }
+}
+
+@media screen and (max-width:768px){
+    .logo{
+        height: 110px;
+        margin-top: 15px;
+    }
+}
+
+@media screen and (max-width:650){
+    .logo{
+        height: 90px;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width:565){
+    .logo{
+        display: block;
+        padding-left: auto;
+        padding-right: auto;
+        width: 10%;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ddd;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(128, 128, 128);
+}

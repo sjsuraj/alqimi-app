@@ -1,0 +1,103 @@
+
+header{
+    padding-right: 10px;
+}
+
+.tabs,.button{
+    border-radius: 0px;
+    width: 101%;
+    background-color: rgb(12, 12, 170);
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    opacity: 0.6;
+    transition: 0.3s;
+    margin-right: 0px;
+}
+
+.active,
+.tabs:hover {
+    opacity: 1;
+    border-bottom: 2px solid #fff;
+    border-radius: none;
+}
+
+section{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.form-select-sm,
+option{
+    font-size: 12px;
+}
+
+label{
+    font-size: x-small;
+}
+
+select{
+    border-radius: 1px;
+    height: 30px;
+}
+
+input{
+    border-radius: 1px;
+    height: 30px;
+}
+
+.input-group-text{
+    border-radius: 1px;
+    height: 30px;
+    font-size: 12px;
+}
+
+input,
+input::-webkit-input-placeholder {
+    font-size: 12px;
+    line-height: 3;
+}
+
+.logo{
+    height: 125px;
+    margin-top: 15px;
+    margin-right: 0px;
+    padding: 0px;
+}
+
+.center{
+    display: block;
+    margin-top: 13px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
+
+#outer{
+    width:120%;
+    text-align: center;
+}
+
+.btncls{
+    border-radius: 0px;
+    margin-left: 10px;    
+}
+.resetbtn,.cancelbtn{
+    width: 120px;
+}
+.cancel{
+    border: 1px solid rgba(78, 78, 78, 0);
+}
+
+hr.line{
+    border: 1px solid rgb(9, 9, 134);
+}
+
+.info{
+    color: rgb(9, 9, 134);
+}
+
+small{
+    font-size: x-small;
+
+}

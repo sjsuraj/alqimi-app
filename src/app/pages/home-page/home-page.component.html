@@ -1,0 +1,777 @@
+<div class="container-fluid">
+  <header>
+    <div class="row g-1 mb-3 tabs1">
+      <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+        <div class="button btn btn-large tabs active">Personal Information</div>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+        <div class="button btn btn-large tabs">Service Details</div>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+        <div class="button btn btn-large tabs">Transition Details</div>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+        <div class="button btn btn-large tabs">Sponser Details</div>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+        <div class="button btn btn-large tabs">Permissions</div>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+        <div class="button btn btn-large tabs">Terms And Conditions</div>
+      </div>
+    </div>
+  </header>
+  <section>
+                                    <!--Personal Information-->
+    <form class="needs-validation" [formGroup]="signinForm" novalidate>
+      <div class="row mt-1">
+        <div class="col-lg-3 col-md-4 col-sm-4 col-12 border logo">
+          <img src="./../../../assets/img/avatar.svg" class="center" />
+        </div>
+        <div class="col-lg-9 col-md-8 col-sm-8 col-12">
+          <div class="row g-2 mb-3">
+            <div class="col-lg-2 col-md-6 col-sm-6 col-12">
+              <label for="prefix" class="form-label">Prefix*</label>
+              <select
+                class="form-select form-select-sm"
+                id="prefix"
+                aria-label=".form-select-sm"
+                formControlName="prefix"
+                [ngClass]="{
+                  'is-invalid': submitted && helper.prefix.errors
+                }"
+                required
+              >
+                <option selected>Select Title</option>
+                <option value="1">Mr.</option>
+                <option value="2">Ms.</option>
+              </select>
+              <div
+                *ngIf="helper.prefix.touched && helper.prefix.errors"
+                class="text-danger"
+              >
+                <div *ngIf="helper.prefix.errors.required">
+                  <small>Prefix is required*</small>
+                </div>
+              </div>
+              <div class="invalid-feedback">
+                <small>Please select a Prefix.</small>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+              <label for="fname" class="form-label">First Name*</label>
+              <input
+                class="form-control"
+                id="fname"
+                type="text"
+                placeholder="First Name"
+                formControlName="fname"
+                [ngClass]="{
+                  'is-invalid': submitted && helper.fname.errors
+                }"
+                required
+              />
+              <div
+                *ngIf="helper.fname.touched && helper.fname.errors"
+                class="text-danger"
+              >
+                <div *ngIf="helper.fname.errors.required">
+                  <small>First Name is required*</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-6 col-12">
+              <label for="mname" class="form-label">Middle Name</label>
+              <input
+                class="form-control"
+                id="mname"
+                type="text"
+                placeholder="Middle Name"
+              />
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+              <label for="lname" class="form-label">Last Name*</label>
+              <input
+                class="form-control"
+                id="lname"
+                type="text"
+                placeholder="Last Name"
+                formControlName="lname"
+                [ngClass]="{
+                  'is-invalid': submitted && helper.lname.errors
+                }"
+              />
+              <div
+                *ngIf="helper.lname.touched && helper.lname.errors"
+                class="text-danger"
+              >
+                <div *ngIf="helper.lname.errors.required">
+                  <small>Last Name is required*</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-12 col-12">
+              <label for="suffix" class="form-label">Suffix</label>
+              <input
+                class="form-control"
+                id="suffix"
+                type="text"
+                placeholder="Suffix"
+              />
+            </div>
+          </div>
+          <div class="row g-2 mb-3">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+              <label for="nname" class="form-label">Nickname</label>
+              <input
+                class="form-control"
+                id="nname"
+                type="text"
+                placeholder="Nickname"
+              />
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+              <label for="dob" class="form-label">Date of Birth*</label>
+              <input
+                type="date"
+                class="form-control"
+                id="dob"
+                placeholder="DD/MM/YYYY"
+                formControlName="dob"
+                [ngClass]="{
+                  'is-invalid': submitted && helper.dob.errors
+                }"
+              />
+              <div
+                *ngIf="helper.dob.touched && helper.dob.errors"
+                class="text-danger"
+              >
+                <div *ngIf="helper.dob.errors.required">
+                  <small>Mention your Date of Birth*</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+              <label for="gender" class="form-label">Gender*</label>
+              <select
+                class="form-select form-select-sm"
+                id="gender"
+                aria-label=".form-select-sm"
+                formControlName="gender"
+                [ngClass]="{
+                  'is-invalid': submitted && helper.gender.errors
+                }"
+                required
+              >
+                <option selected>Select Gender</option>
+                <option value="1">Male</option>
+                <option value="2">Female</option>
+                <option value="3">Others</option>
+              </select>
+              <div
+                *ngIf="helper.gender.touched && helper.gender.errors"
+                class="text-danger"
+              >
+                <div *ngIf="helper.gender.errors.required">
+                  <small>Gender is required*</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+              <label for="sxo" class="form-label">Sexual Orientation</label>
+              <select
+                class="form-select form-select-sm"
+                id="sxo"
+                aria-label=".form-select-sm"
+              >
+                <option selected>Select Orientation</option>
+                <option value="1">Heterosexual</option>
+                <option value="2">Homosexual</option>
+                <option value="3">Bisexual</option>
+                <option value="4">Asexual</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="line" />
+                                 
+                                <!--Contact Information-->
+      <div class="row">
+        <p class="info">Contact Information</p>
+        <div class="row g-2 mb-3">
+          <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <label for="email" class="form-label">Email*</label>
+            <input
+              class="form-control"
+              id="email"
+              type="text"
+              placeholder="Email"
+              formControlName="email"
+              [ngClass]="{
+                'is-invalid': submitted && helper.email.errors
+              }"
+            />
+            <div
+              *ngIf="helper.email.touched && helper.email.errors"
+              class="text-danger"
+            >
+              <div *ngIf="helper.email.errors.required">
+                <small>Email is required*</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <label for="phn" class="form-label">Phone*</label>
+            <div class="input-group">
+              <span class="input-group-text" id="phn">+1</span>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Phone"
+                aria-label="Phone"
+                aria-describedby="phn"
+                formControlName="phn"
+                [ngClass]="{
+                  'is-invalid': submitted && helper.phn.errors
+                }"
+              />
+            </div>
+            <div
+              *ngIf="helper.phn.touched && helper.phn.errors"
+              class="text-danger"
+            >
+              <div *ngIf="helper.phn.errors.required">
+                <small>Phone is required*</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <label for="cp" class="form-label">Contact Preference*</label>
+            <select
+              class="form-select form-select-sm"
+              id="sp"
+              aria-label=".form-select-sm"
+              formControlName="cp"
+              [ngClass]="{
+                'is-invalid': submitted && helper.cp.errors
+              }"
+              required
+            >
+              <option selected>Select Preference*</option>
+              <option value="1">Email</option>
+              <option value="2">Phone</option>
+            </select>
+            <div
+              *ngIf="helper.cp.touched && helper.cp.errors"
+              class="text-danger"
+            >
+              <div *ngIf="helper.cp.errors.required">
+                <small>Contact Preference is required*</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <label for="pdays" class="form-label">Preferable Days*</label>
+            <select
+              class="form-select form-select-sm"
+              id="pdays"
+              aria-label=".form-select-sm"
+              formControlName="pdays"
+              [ngClass]="{
+                'is-invalid': submitted && helper.pdays.errors
+              }"
+              required
+            >
+              <option selected>Select Day</option>
+              <option value="1">Monday</option>
+              <option value="2">Tuesday</option>
+              <option value="3">Wednesday</option>
+              <option value="4">Thursday</option>
+              <option value="5">Friday</option>
+            </select>
+            <div
+              *ngIf="helper.pdays.touched && helper.pdays.errors"
+              class="text-danger"
+            >
+              <div *ngIf="helper.pdays.errors.required">
+                <small>Select Preferable Day*</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <label for="stime" class="form-label">Start Time*</label>
+            <select
+              class="form-select form-select-sm"
+              id="stime"
+              aria-label=".form-select-sm"
+              formControlName="stime"
+              [ngClass]="{
+                'is-invalid': submitted && helper.stime.errors
+              }"
+              required
+            >
+              <option selected>Select Time</option>
+              <option value="1">12:00 PM</option>
+              <option value="2">02:00 PM</option>
+              <option value="3">04:00 PM</option>
+            </select>
+            <div
+              *ngIf="helper.stime.touched && helper.stime.errors"
+              class="text-danger"
+            >
+              <div *ngIf="helper.stime.errors.required">
+                <small>Select a Start Time*</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <label for="etime" class="form-label">End Time*</label>
+            <select
+              class="form-select form-select-sm"
+              id="etime"
+              aria-label=".form-select-sm"
+              formControlName="etime"
+              [ngClass]="{
+                'is-invalid': submitted && helper.etime.errors
+              }"
+              required
+            >
+              <option selected>Select Time</option>
+              <option value="1">01:00 PM</option>
+              <option value="2">03:00 PM</option>
+              <option value="3">05:00 PM</option>
+            </select>
+            <div
+              *ngIf="helper.etime.touched && helper.etime.errors"
+              class="text-danger"
+            >
+              <div *ngIf="helper.etime.errors.required">
+                <small>End Time is required*</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row g-2 mb-3">
+          <div class="col-lg-3 col-md-4 col-sm-4 col-12">
+            <label for="sadd" class="form-label">Street Address*</label>
+            <input
+              class="form-control"
+              id="sadd"
+              type="text"
+              placeholder="Street Address"
+              formControlName="sadd"
+              [ngClass]="{
+                'is-invalid': submitted && helper.sadd.errors
+              }"
+            />
+            <div
+              *ngIf="helper.sadd.touched && helper.sadd.errors"
+              class="text-danger"
+            >
+              <div *ngIf="helper.sadd.errors.required">
+                <small>Street Address is required*</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-4 col-12">
+            <label for="sadd2" class="form-label">Street Address Line2</label>
+            <input
+              class="form-control"
+              id="sadd2"
+              type="text"
+              placeholder="Street Address Line2"
+            />
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-4 col-12">
+            <label for="city" class="form-label">City*</label>
+            <input
+              class="form-control"
+              id="city"
+              type="text"
+              placeholder="City"
+              formControlName="city"
+              [ngClass]="{
+                'is-invalid': submitted && helper.city.errors
+              }"
+            />
+            <div
+              *ngIf="helper.city.touched && helper.city.errors"
+              class="text-danger"
+            >
+              <div *ngIf="helper.city.errors.required">
+                <small>City is required*</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6 col-sm-6 col-12">
+            <label for="state" class="form-label">State*</label>
+            <input
+              class="form-control"
+              id="state"
+              type="text"
+              placeholder="State"
+              formControlName="state"
+              [ngClass]="{
+                'is-invalid': submitted && helper.state.errors
+              }"
+            />
+            <div
+              *ngIf="helper.state.touched && helper.state.errors"
+              class="text-danger"
+            >
+              <div *ngIf="helper.state.errors.required">
+                <small>State is required*</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6 col-sm-6 col-12">
+            <label for="zcode" class="form-label">Zipcode*</label>
+            <input
+              class="form-control"
+              id="zcode"
+              type="text"
+              placeholder="Zipcode"
+              formControlName="zcode"
+              [ngClass]="{
+                'is-invalid': submitted && helper.zcode.errors
+              }"
+            />
+            <div
+              *ngIf="helper.zcode.touched && helper.zcode.errors"
+              class="text-danger"
+            >
+              <div *ngIf="helper.zcode.errors.required">
+                <small>Last Name is required*</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row g-2 mb-3">
+          <div class="col-lg-1 col-md-4 col-sm-6 col-12">
+            <label for="country" class="form-label">Country*</label>
+            <select
+              class="form-select form-select-sm"
+              id="country"
+              aria-label=".form-select-sm"
+              formControlName="country"
+              [ngClass]="{
+                'is-invalid': submitted && helper.country.errors
+              }"
+              required
+            >
+              <option selected>Select Country</option>
+              <option value="1">Alaska</option>
+              <option value="2">
+                Armed Forces Europe, Middle East, Africa
+              </option>
+              <option value="3">Armed Forces Pacific</option>
+              <option value="4">Australia</option>
+              <option value="5">Belgium</option>
+              <option value="6">British Indian Ocean Territory</option>
+              <option value="7">Germany</option>
+              <option value="8">Hungary</option>
+              <option value="9">Italy</option>
+              <option value="10">Japan</option>
+            </select>
+            <div
+              *ngIf="helper.country.touched && helper.country.errors"
+              class="text-danger"
+            >
+              <div *ngIf="helper.country.errors.required">
+                <small>Select a Country*</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <label for="cmi" class="form-label"
+              >Current Military Installation</label
+            >
+            <select
+              class="form-select form-select-sm"
+              id="cmi"
+              aria-label=".form-select-sm "
+              required
+            >
+              <option selected>Select</option>
+              <option value="1">USAG Alaska, Greely</option>
+              <option value="2">Ankara</option>
+              <option value="3">USAG Yongsan-Casey</option>
+              <option value="4">Canberra</option>
+              <option value="5">Kleine Brogel Air Base</option>
+              <option value="6">Navy Support Facility Diego Garcia</option>
+              <option value="7">Buechel Air Base</option>
+              <option value="8">Papa Air Base</option>
+              <option value="9">Ghedi Air Base</option>
+              <option value="10">Naval Air Facility Atsugi</option>
+            </select>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <label for="cmi2" class="form-label"
+              >Military Installation Name(If Any)</label
+            >
+            <input
+              class="form-control"
+              id="cmi2"
+              type="text"
+              placeholder="Military Installation Name"
+            />
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <label for="dbu" class="form-label">Facebook Username</label>
+            <input
+              class="form-control"
+              id="fbu"
+              type="text"
+              placeholder="Facebook Username"
+            />
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <label for="twu" class="form-label">Twitter USername</label>
+            <input
+              class="form-control"
+              id="twu"
+              type="text"
+              placeholder="Twitter Username"
+            />
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <label for="linu" class="form-label">LinkedIn Username</label>
+            <input
+              class="form-control"
+              id="linu"
+              type="text"
+              placeholder="LinkedIn Username"
+            />
+          </div>
+        </div>
+      </div>
+
+      <hr class="line" />
+
+      <div class="row">
+        <p class="info">Family Information</p>
+        <div class="row g-2 mb-3">
+          <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+            <label for="ms" class="form-label">Marrital Status*</label>
+            <select
+              class="form-select form-select-sm"
+              id="ms"
+              aria-label=".form-select-sm"
+              formControlName="ms"
+              [ngClass]="{
+                'is-invalid': submitted && helper.ms.errors
+              }"
+              required
+            >
+              <option selected>Select Status</option>
+              <option value="1">Married</option>
+              <option value="2">Widowed</option>
+              <option value="3">Separated</option>
+              <option value="4">Divorced</option>
+              <option value="5">Single</option>
+            </select>
+            <div
+              *ngIf="helper.ms.touched && helper.ms.errors"
+              class="text-danger"
+            >
+              <div *ngIf="helper.ms.errors.required">
+                <small>Mention your Marrital Status*</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+            <label for="spn" class="form-label">Spouse Name</label>
+            <input
+              class="form-control"
+              id="spn"
+              type="text"
+              placeholder="Spouse Name"
+            />
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+            <label for="spndob" class="form-label">Spouse Date of Birth</label>
+            <input
+              class="form-control"
+              id="spndob"
+              type="date"
+              placeholder="DD/MM/YYYY"
+            />
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+            <label for="chld" class="form-label">Children</label>
+            <select
+              class="form-select form-select-sm"
+              id="chld"
+              aria-label=".form-select-sm"
+            >
+              <option selected></option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3+</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <hr class="line" />
+
+                                <!--Emergency Contact Information-->
+      <div class="row">
+        <p class="info">Emergency Contact Information</p>
+        <div class="row g-2">
+          <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+            <label for="fname2" class="form-label">First Name*</label>
+            <input
+              class="form-control"
+              id="fname2"
+              type="text"
+              placeholder="First Name"
+              formControlName="fname2"
+              [ngClass]="{
+                'is-invalid': submitted && helper.fname2.errors
+              }"
+            />
+            <div
+              *ngIf="helper.fname2.touched && helper.fname2.errors"
+              class="text-danger"
+            >
+              <div *ngIf="helper.fname2.errors.required">
+                <small>First Name is required*</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+            <label for="mname" class="form-label">Middle Name</label>
+            <input
+              class="form-control"
+              id="mname"
+              type="text"
+              placeholder="Middle Name"
+            />
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+            <label for="country" class="form-label">Last Name*</label>
+            <input
+              class="form-control"
+              id="lname2"
+              type="text"
+              placeholder="Last Name"
+              formControlName="lname2"
+              [ngClass]="{
+                'is-invalid': submitted && helper.lname2.errors
+              }"
+            />
+            <div
+              *ngIf="helper.lname2.touched && helper.lname2.errors"
+              class="text-danger"
+            >
+              <div *ngIf="helper.lname2.errors.required">
+                <small>Last Name is required*</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+            <label for="reln" class="form-label">Relationship*</label>
+            <select
+              class="form-select form-select-sm"
+              id="reln"
+              aria-label=".form-select-sm"
+              formControlName="reln"
+              [ngClass]="{
+                'is-invalid': submitted && helper.reln.errors
+              }"
+              required
+            >
+              <option selected>Select</option>
+              <option value="1">Spouse</option>
+              <option value="2">Father</option>
+              <option value="3">Mother</option>
+              <option value="4">Brother/Sister</option>
+              <option value="5">Others</option>
+            </select>
+            <div
+              *ngIf="helper.reln.touched && helper.reln.errors"
+              class="text-danger"
+            >
+              <div *ngIf="helper.reln.errors.required">
+                <small>Mention your Relationship*</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row g-2">
+          <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+            <label for="email" class="form-label">Email*</label>
+            <input
+              class="form-control"
+              id="email"
+              type="text"
+              placeholder="Email"
+              formControlName="email"
+              [ngClass]="{
+                'is-invalid': submitted && helper.email.errors
+              }"
+            />
+            <div
+              *ngIf="helper.email.touched && helper.email.errors"
+              class="text-danger"
+            >
+              <div *ngIf="helper.email.errors.required">
+                <small>Email is required*</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+            <label for="phn" class="form-label">Phone*</label>
+            <div class="input-group">
+              <span class="input-group-text" id="phn">+1</span>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Phone"
+                aria-label="Phone"
+                aria-describedby="phn"
+                formControlName="phn"
+                [ngClass]="{
+                  'is-invalid': submitted && helper.phn.errors
+                }"
+              />
+            </div>
+            <div
+              *ngIf="helper.phn.touched && helper.phn.errors"
+              class="text-danger"
+            >
+              <div *ngIf="helper.phn.errors.required">
+                <small>Last Name is required*</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4 mb-4 btn-grp">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-2"></div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-8" id="outer">
+          <button class="btn btn-sm btn-primary btncls savebtn" type="submit">
+            Save & Continue
+          </button>
+          <button
+            class="btn btn-sm btn-primary btncls resetbtn"
+            type="reset"
+            disabled
+          >
+            Reset
+          </button>
+          <button class="btn btn-sm btn-outline-dark btncls cancelbtn">
+            Cancel
+          </button>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-2"></div>
+      </div>
+    </form>
+    <!-- </div> -->
+  </section>
+</div>
